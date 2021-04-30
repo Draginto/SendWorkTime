@@ -11,5 +11,8 @@ Visit this link to get your API key: https://app.timecamp.com/app#/settings/user
 ## Setup your Dummy Gmail Account for SMTP
 Visit this link and sign into your dummy gmail account: https://myaccount.google.com/lesssecureapps make sure that when you created this account you did not enable 2-step verification. If it's not enabled, when you visit the aforementioned link, you should see a toggle. Click it to enable less secure apps access.
 
+## Add your Sender email and Recipients
+Add the dummy gmail account being used to send the email to `sender_email` and add the list of recipients to `receiver_email`, seperate the list of emails by comma.
+
 ## Add your API key and SET Pay Period
-When you receieved your api key, if for private use, replace the "os.environ.get()" to the api string. If for public use, please set an the api key to an environment variable and keep the os.environ.get() statement, replacing the string to your variable name.
+When you receieved your api key, if for private use, replace the "os.environ.get()" to the api string. If for public use, please set an the api key to an environment variable and keep the os.environ.get() statement, replacing the string to your variable name. SET your pay period by editing the `PAY_TIME_FRAME` variable. Please keep `.lower()` in the assignment.
