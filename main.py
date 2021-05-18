@@ -34,7 +34,9 @@ def main():
 
     set_from_date = datetime.today() - timedelta(days=num_of_days)  # Get the timeframe from today's date.
     for entry in tc.entries(from_date=set_from_date.date(), user_ids=[me.user_id]):
-        message_text += entry.date + " Start time: " + entry.start_time + " End time: " + entry.end_time + "\n"
+        start = datetime.strptime(entry.start_time, "%H:%M:%S")
+        finish = datetime.strptime(entry.end_time, "%H:%M:%S")
+        message_text += entry.date + " Start time: " + start.strftime("%I:%M %p") + " End time: " + finish.strftime("%I:%M %p") + "\n "
 
     message = "From: %s\r\n" % sender_email \
               + "To: %s\r\n" % ",".join(receiver_email) \
